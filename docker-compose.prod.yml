@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: mongodb-prod
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data-prod:/data/db
+    restart: always
+
+  webmagic-api:
+    build: .
+    container_name: webmagic-api-prod
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/price-tracker
+    restart: always
+
+volumes:
+  mongo-data-prod:
