@@ -1,5 +1,5 @@
 version: '3.8'
-
+Y
 services:
   mongodb:
     image: mongo:6.0
@@ -12,7 +12,7 @@ services:
 
   webmagic-api:
     build: .
-    container_name: webmagic-api-dev
+    container_name: price-tracking-api-dev
     ports:
       - "8080:8080"
     depends_on:

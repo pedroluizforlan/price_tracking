@@ -12,7 +12,7 @@ services:
 
   webmagic-api:
     build: .
-    container_name: webmagic-api-prod
+    container_name: price-tracking-api-dev
     ports:
       - "8080:8080"
     depends_on:
