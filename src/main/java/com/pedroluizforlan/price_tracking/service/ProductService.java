@@ -6,6 +6,6 @@ import com.pedroluizforlan.price_tracking.service.crud.CrudService;
 import java.util.List;
 
 public interface ProductService extends CrudService<String,Product> {
-    List<Product> findByCategory(String categoryId);
+    List<Product> findByCategoryId(String categoryId);
     List<Product> findByActiveTrue();
 }
